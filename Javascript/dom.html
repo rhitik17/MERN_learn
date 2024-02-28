@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+
+  <style>
+    .box {
+      height: 200px;
+      width: 200px;
+      display:block;
+      transition: 0.4s;
+      
+    }
+
+    .sign_in_input{
+        background: lightblue;
+        /* transform: translate(200px); */
+    }
+    .sign_in_message{
+        background: lightcoral;
+    }
+
+
+.message{
+    transform: translatey(-200px);
+    background: lightcyan;
+}
+    
+.input{
+    transform: translateY(200px);
+    background: lightgreen;
+}
+
+    
+    
+  </style>
+
+  <body>
+      <div class="sign_in_message box "> welcome to sign_in</div>
+    <div class="sign_in_input box ">
+      <input type="text" />
+      <button onclick="executeMe()">Click me</button>
+    </div>
+    
+  </body>
+
+  <script>
+    function executeMe() {
+      // document.querySelector('div').style.background="yellow";
+      // document.querySelector('div').style.transform='translatex(100px)';
+
+    //   document.querySelector("div").classList.remove("sign_in_message");
+    //   document.querySelector("div").classList.add("message");
+      document.querySelector(".box").classList.remove("sign_in_input");
+      document.querySelector(".box").classList.add("input");
+    }
+    // executeMe();
+  </script>
+</html>

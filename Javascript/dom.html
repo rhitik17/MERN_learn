@@ -10,53 +10,95 @@
     .box {
       height: 200px;
       width: 200px;
-      display:block;
+      display: block;
       transition: 0.4s;
-      
     }
 
-    .sign_in_input{
-        background: lightblue;
-        /* transform: translate(200px); */
+    .sign_in_input {
+      background: lightblue;
+      /* transform: translate(200px); */
     }
-    .sign_in_message{
-        background: lightcoral;
+    .sign_in_message {
+      background: lightcoral;
     }
 
+    .message {
+      transform: translatey(-200px);
+      background: lightcyan;
+    }
 
-.message{
-    transform: translatey(-200px);
-    background: lightcyan;
-}
-    
-.input{
-    transform: translateY(200px);
-    background: lightgreen;
-}
-
-    
-    
+    .input {
+      transform: translateY(200px);
+      background: lightgreen;
+    }
   </style>
 
   <body>
-      <div class="sign_in_message box "> welcome to sign_in</div>
-    <div class="sign_in_input box ">
+    <div class="sign_in_message box">welcome to sign_in</div>
+    <div class="sign_in_input box">
       <input type="text" />
       <button onclick="executeMe()">Click me</button>
     </div>
-    
+
+    <input type="text" clss="age" />
+    <button onclick="ageDivide()">submit</button>
   </body>
 
   <script>
-    function executeMe() {
-      // document.querySelector('div').style.background="yellow";
-      // document.querySelector('div').style.transform='translatex(100px)';
+    
+        function executeMe() {
+          // document.querySelector('div').style.background="yellow";
+          // document.querySelector('div').style.transform='translatex(100px)';
 
-    //   document.querySelector("div").classList.remove("sign_in_message");
-    //   document.querySelector("div").classList.add("message");
-      document.querySelector(".box").classList.remove("sign_in_input");
-      document.querySelector(".box").classList.add("input");
+        //   document.querySelector("div").classList.remove("sign_in_message");
+        //   document.querySelector("div").classList.add("message");
+          document.querySelector(".box").classList.remove("sign_in_input");
+          document.querySelector(".box").classList.add("input");
+
+
+        }
+        // executeMe();
+
+
+        // day-2-----
+        let a=6;
+
+    if(![null,0,'',undefined].includes(a)){
+      console.log("a exists");
+    }else{
+      console.log("a doesnot exists");
     }
-    // executeMe();
+
+
+    // day-3------
+    function add(a,b){
+      return a<b;
+    }
+
+    console.log(add(7,6) || 'milena so or vayerw aayo')
+    console.log(add(7,6) && "milena")
+    console.log(add(4,6) || "milyo ")
+    console.log(add(4,6) && "milyo ani and vayerw aayo")
+
+
+    if(a%2===0){
+    console.log('even');
+    }
+
+    function ageDivide(){
+
+      var age= document.querySelector("age");
+      var ageData= age.value;
+
+      if(ageData<15){
+        console.log("this is child");
+      }
+      else if(ageData>15 && ageData<30){
+        console.log("this is youth");
+      }
+      else{
+        console.log("old")
+      }
+    }
   </script>
 </html>

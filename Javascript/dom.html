@@ -40,7 +40,7 @@
       <button onclick="executeMe()">Click me</button>
     </div>
 
-    <input type="text" clss="age" />
+    <input type="text" class="age" />
     <button onclick="ageDivide()">submit</button>
   </body>
 
@@ -87,17 +87,20 @@
 
     function ageDivide(){
 
-      var age= document.querySelector("age");
+      var age= document.querySelector(".age");
       var ageData= age.value;
 
-      if(ageData<15){
+      if(ageData<=15){
         console.log("this is child");
       }
-      else if(ageData>15 && ageData<30){
+      else if(ageData>15 && ageData<=30){
         console.log("this is youth");
       }
+      else if(ageData>30 && ageData<=50){
+        console.log("weak")
+      }
       else{
-        console.log("old")
+        console.log("budo");
       }
     }
   </script>

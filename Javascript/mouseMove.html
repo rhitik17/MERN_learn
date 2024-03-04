@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        cursor: none;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .circle,
+      .big-circle {
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+      }
+
+      .circle {
+        height: 12px;
+        width: 12px;
+        background-color: chocolate;
+        animation: hueChanges linear infinite 30s;
+      }
+      .big-circle {
+        height: 18px;
+        width: 18px;
+        border: 1px solid chocolate;
+        animation: beating ease-in-out infinite alternate 0.4s;
+        transition: 0.3s;
+      }
+
+      @keyframes beating {
+        from {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+    }
+        @keyframes hueChanges {
+          from {
+            filter: hue-rotate(0deg);
+          }
+          to {
+            filter: hue-rotate(360deg);
+          }
+        }
+      
+    </style>
+  </head>
+  <body>
+    <div class="circle"></div>
+    <div class="big-circle"></div>
+  </body>
+  <script>
+    document.addEventListener("mousemove", function (e) {
+      document.querySelector(".circle").style.top = e.clientY - 6 + "px";
+      document.querySelector(".circle").style.left = e.clientX - 6 + "px";
+
+      document.querySelector(".big-circle").style.top = e.clientY - 9 + "px";
+      document.querySelector(".big-circle").style.left = e.clientX - 9 + "px";
+    });
+  </script>
+</html>

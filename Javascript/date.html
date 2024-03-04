@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100%;
+      background: url(https://cdn.pixabay.com/photo/2018/08/03/04/36/couple-3581038_640.jpg)
+        center;
+      background-size: cover;
+    }
+    section {
+        margin-top: 40vh;
+        margin-right: 10vw;
+    
+      
+    }
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      color: rgb(255, 255, 255);
+      
+      
+    }
+    h3{
+        text-decoration: double;
+        border-color: black;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+    }
+    .btn .yes,
+    .no {
+      background-color: rgb(20, 53, 113);
+      color: white;
+      font-size: 20px;
+      border: none;
+      border-radius: 8px;
+      margin-left: 20px;
+      padding: 6px 12px;
+      border: 2px solid white;
+    }
+
+
+    /* .yes, .no {
+      margin-left: 20px;
+      border: 2px solid white;
+    }
+    .yes{
+        border: 2px solid white;
+    } */
+    .no {
+      /* top: fixed;
+      left: fixed; */
+      transition: .8s;
+    }
+
+    .msg {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .flex {
+      display: flex;
+    }
+    .backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(3px);
+    }
+    .msg-content {
+        display: flex;
+      background: rgb(213, 166, 166);
+      color: maroon;
+      font: 50px bold;
+      
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 10px;
+      animation: fadeInDown 0.4s ease-in;
+    }
+    img{
+        height: 250px;
+        width: 300px;
+    }
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-200px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  </style>
+  <body>
+    <section>
+      
+        <div class="text">
+          <h3>DO you want to go on a date with me?</h3>
+        </div>
+      
+      <div class="btn">
+        <button class="yes" onclick="showDialog()">Yes</button>
+        <button class="no" id="myButton">No</button>
+      </div>
+    </section>
+    <div class="msg">
+      <div class="backdrop" onclick="showDialog()"></div>
+      <div class="msg-content">hurrey!
+        <img src="https://media4.giphy.com/media/3oEdv03JAv74J6KGTS/giphy.gif" alt="">
+      </div>
+    </div>
+  </body>
+  <script>
+    const button = document.getElementById("myButton");
+
+    button.addEventListener("mouseenter", () => {
+      const maxX = window.innerWidth - button.offsetWidth;
+      const maxY = window.innerHeight - button.offsetHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      button.style.position = "absolute";
+      button.style.left = randomX + "px";
+      button.style.top = randomY + "px";
+    });
+
+    
+    const showDialog = () => {
+      document.querySelector(".msg").classList.toggle("flex");
+      // document.querySelector('.backdrop').classList.('flex');
+    }
+  </script>
+</html>

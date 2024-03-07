@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+      align-items: center;
+      padding: 0 12vw;
+    }
+    .nav-items {
+      display: flex;
+      color: aliceblue;
+    }
+
+    .nav-item {
+      padding: 6px 16px;
+      transition: 0.3s;
+      border-radius: 12vw;
+    }
+
+    .nav-item:hover {
+      background: rgba(211, 182, 182, 0.5);
+    }
+
+    section.hero {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+    }
+
+    .text-area,
+    .image-area {
+      width: 50%;
+      height: 100%;
+      display: flex;
+    }
+
+    .text-area .title {
+      font-size: 72px;
+    }
+
+    .text-area {
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 12vw;
+      padding-right: 6vw;
+    }
+
+    .sub-title {
+      font-size: 36px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background: coral;
+      color: white;
+      border-radius: 4px;
+      border: none;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+
+  <body>
+    <nav>
+      <div class="logo">logo</div>
+      <div class="nav-items">
+        <div class="nav-item">Home</div>
+        <div class="nav-item">Home</div>
+        <div class="nav-item">Home</div>
+        <div class="nav-item">Home</div>
+        <div class="nav-item">Home</div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="text-area">
+          <div class="title">Some random title</div>
+          <div class="sub-title">Some random subtitle that describes</div>
+          <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+              officia sequi consequatur quidem quasi ab asperiores adipisci ullam
+              voluptatibus repellat molestiae quo. Perspiciatis atque ab qui
+              voluptatem aliquam, quasi vero?
+            </p>
+            <div class="btn-area">
+                <button>Get Started</button>
+            </div>
+        </div>
+        <div class="image-area">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/08/03/04/36/couple-3581038_640.jpg"
+            alt=""
+          />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

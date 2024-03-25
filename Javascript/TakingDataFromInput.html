@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    section {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-form {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 8px;
+      padding: 16px 16px 24px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+
+      .login-title {
+        font-size: 24px;
+      }
+
+      .breaker {
+        height: 12px;
+        width: 40px;
+        border-radius: 30px;
+        background: coral;
+        margin: 6px 0px;
+      }
+
+      .form-contains {
+        margin-top: 16px;
+
+        .input-box {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 8px;
+          border: 1px solid rgba(0, 0, 0, 0.8);
+          padding: 4px;
+          border-radius: 3px;
+
+          label {
+            font-size: 11px;
+          }
+
+          input {
+            min-width: 200px;
+            margin-top: 2px;
+            border: none;
+
+            &:active {
+              border: none;
+            }
+          }
+        }
+
+        button {
+          margin-top: 24px;
+          width: 100%;
+          padding: 8px 0;
+          background-color: coral;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          box-shadow: 5px 8px 8px rgba(222, 94, 24, 0.32);
+
+          &:active {
+            transform: translateY(2px);
+          }
+        }
+      }
+    }
+  </style>
+  <body>
+    <!-- Form starts here -->
+
+    <section>
+      <div class="login-form">
+        <div class="login-title">Login</div>
+        <div class="breaker"></div>
+        <div class="form-contains">
+          <div class="input-box">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter username" />
+          </div>
+          <div class="input-box">
+            <label for="Password">Password</label>
+            <input type="password" placeholder="Enter password" />
+          </div>
+          <button class="login">Login</button>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script></script>
+</html>

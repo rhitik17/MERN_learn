@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Document</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
   </head>
   <style>
     body {
@@ -62,8 +65,21 @@
             margin-top: 2px;
             border: none;
 
-            &:focus, &:active{
+            &:focus,
+            &:active {
               outline: none;
+            }
+          }
+
+          .password-box {
+            display: flex;
+            align-items: center;
+            input {
+              flex: 1;
+            }
+
+            .material-symbols-outlined {
+              font-size: 18px;
             }
           }
         }
@@ -84,27 +100,50 @@
         }
       }
     }
+
+    .none {
+      display: none;
+    }
   </style>
   <body>
     <!-- Form starts here -->
 
-    <section >
+    <section>
       <div class="login-form">
+        <!-- login title -->
         <div class="login-title">Login</div>
         <div class="breaker"></div>
+
         <div class="form-contains">
+          <!-- input-box of username and password -->
+
+          <!-- username starts -->
           <div class="input-box">
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="Enter username" />
           </div>
+          <!-- password starts -->
           <div class="input-box">
             <label for="Password">Password</label>
-            <div class="password-box">
-                <input type="password" name="password" placeholder="Enter password" />
-                <span class="material-symbols-outlined">visibility</span>
-                <span class="material-symbols-outlined">visibility_off</span>
-            </div>
 
+            <!-- password box starts here -->
+            <div class="password-box">
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+              />
+
+              <!-- eye visibility button  -->
+              <div class="visibility-button" onclick="toggleVisibility()">
+                <span class="material-symbols-outlined visible"
+                  >visibility</span
+                >
+                <span class="material-symbols-outlined invisible none"
+                  >visibility_off</span
+                >
+              </div>
+            </div>
           </div>
           <button type="submit">Login</button>
         </div>
@@ -113,28 +152,44 @@
   </body>
 
   <script>
+    const correctUsername = "admin";
+    const correctPassword = "admin";
 
-    const correctUsername = 'admin';
-    const correctPassword = 'admin';
-
-    const authenticate=()=>{
+    // authentication of username and password
+    const authenticate = () => {
       const username = document.querySelector('input[name="username"]').value;
       const password = document.querySelector('input[name="password"]').value;
 
-      if(username=== "" || password ===""){
-        alert('Please enter both username and fpassword');
+      if (username === "" || password === "") {
+        alert("Please enter both username and fpassword");
         return;
       }
 
-      if(username===correctUsername && password===correctPassword){
-        alert('Sucessfully logged in');
-      }else{
-        alert('incorrect username or password');
+      if (username === correctUsername && password === correctPassword) {
+        alert("Sucessfully logged in");
+      } else {
+        alert("incorrect username or password");
       }
-    }
+    };
 
-    document.querySelector('.login-form').addEventListener('submit',(event)=>{
+    document
+      .querySelector(".login-form")
+      .addEventListener("submit", (event) => {
         authenticate();
-    });
+      });
+
+    // visibility toggle here
+    const toggleVisibility = () => {
+      document.querySelector(".visible").classList.toggle("none");
+      document.querySelector(".invisible").classList.toggle("none");
+      const passwordElement = document.querySelector('input[name="password"]');
+      const passwordAttribute = passwordElement.getAttribute("type");
+
+      if (passwordAttribute === "password") {
+        passwordElement.setAttribute("type", "text");
+      } else {
+        passwordElement.setAttribute("type", "password");
+      }
+    };
   </script>
 </html>

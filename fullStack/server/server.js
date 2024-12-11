@@ -18,8 +18,12 @@ app.use(morgan("dev"))
 
 
 // route
-app.get("/fruits", (req, res) => {
-  res.json({ fruits: ["apple", "banana", "strawberry"] });
+app.use('/api/v1/test', require('./routes/testRoutes'));
+
+app.get("/", (req, res) => {
+ return res
+ .status(200)
+ .send("welcome to the server")
 });
 
 // port
